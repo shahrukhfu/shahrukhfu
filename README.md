@@ -200,5 +200,5 @@ Areas I am continuously expanding knowledge in:
 ### GitHub
 https://github.com/shahrukhfu
 
-###LinkedIn
+### LinkedIn
 https://www.linkedin.com/in/shahrukhfaisalusmani/
