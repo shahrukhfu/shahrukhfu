@@ -1,7 +1,5 @@
 <div align="center">
 
-# Shahrukh Faisal
-
 <img src="./assets/header.svg" width="850" alt="Shahrukh Faisal - AI Engineer &amp; Full Stack Developer" />
 
 </div>
