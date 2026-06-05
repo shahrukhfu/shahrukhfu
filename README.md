@@ -24,24 +24,24 @@ I love exploring the frontier of **Agentic AI systems**, **explainable machine l
   <tr>
     <td valign="top" style="padding: 10px;">
       <a href="https://github.com/shahrukhfu/brain-mri-analysis-deep-vision-pipeline">
-        <img src="./assets/mri-card.svg" width="380" alt="Brain MRI Analysis Deep Vision" />
+        <img src="./assets/mri-card-v2.svg" width="380" alt="Brain MRI Analysis Deep Vision" />
       </a>
     </td>
     <td valign="top" style="padding: 10px;">
       <a href="https://github.com/shahrukhfu/Simple-Multi-Agent-Chat-System">
-        <img src="./assets/agent-card.svg" width="380" alt="Multi-Agent System &amp; LLMs" />
+        <img src="./assets/agent-card-v2.svg" width="380" alt="Multi-Agent System &amp; LLMs" />
       </a>
     </td>
   </tr>
   <tr>
     <td valign="top" style="padding: 10px;">
       <a href="https://github.com/shahrukhfu/customer-retention-engine">
-        <img src="./assets/retention-card.svg" width="380" alt="Customer Retention SaaS Engine" />
+        <img src="./assets/retention-card-v2.svg" width="380" alt="Customer Retention SaaS Engine" />
       </a>
     </td>
     <td valign="top" style="padding: 10px;">
       <a href="https://github.com/shahrukhfu/UniversalPython">
-        <img src="./assets/lowlevel-card.svg" width="380" alt="Low-Level Assembly &amp; Transpilers" />
+        <img src="./assets/lowlevel-card-v2.svg" width="380" alt="Low-Level Assembly &amp; Transpilers" />
       </a>
     </td>
   </tr>

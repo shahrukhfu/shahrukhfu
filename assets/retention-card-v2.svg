@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 140" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101d" />
+      <stop offset="100%" stop-color="#0b0e14" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#30363d" />
+      <stop offset="30%" stop-color="#2ea043" />
+      <stop offset="100%" stop-color="#30363d" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .card-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      fill: #56d364;
+    }
+    .card-desc {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      fill: #8b949e;
+    }
+    .tag-text {
+      font-family: 'Fira Code', monospace;
+      font-weight: 500;
+      font-size: 9px;
+      fill: #c9d1d9;
+    }
+    .chart-bar {
+      fill: #215e2e;
+      animation: grow 3s ease-in-out infinite alternate;
+      transform-origin: bottom;
+    }
+    .chart-line {
+      stroke: #56d364;
+      stroke-width: 2;
+      fill: none;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: drawLine 4s ease-in-out infinite alternate;
+    }
+    @keyframes drawLine {
+      to { stroke-dashoffset: 0; }
+    }
+  </style>
+
+  <!-- Card Body -->
+  <rect x="1" y="1" width="378" height="138" rx="12" fill="url(#card-bg)" stroke="url(#border-glow)" stroke-width="1.5" />
+
+  <!-- Info Area (Left) -->
+  <g transform="translate(15, 15)">
+    <!-- Title -->
+    <text x="0" y="15" class="card-title">Enterprise ML SaaS Apps</text>
+    
+    <!-- Description -->
+    <text x="0" y="38" class="card-desc">Customer Retention Engine &amp; Sales Dashboard</text>
+    <text x="0" y="53" class="card-desc">integrating Random Forest models, FastAPI,</text>
+    <text x="0" y="68" class="card-desc">Next.js UI, JWT auth, and MongoDB store.</text>
+
+    <!-- Tech Tags -->
+    <g transform="translate(0, 88)">
+      <!-- NextJS Badge -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="50" height="18" rx="4" fill="#1f293d" />
+        <text x="25" y="12" class="tag-text" text-anchor="middle">Next.js</text>
+      </g>
+
+      <!-- FastAPI Badge -->
+      <g transform="translate(56, 0)">
+        <rect x="0" y="0" width="50" height="18" rx="4" fill="#1f293d" />
+        <text x="25" y="12" class="tag-text" text-anchor="middle">FastAPI</text>
+      </g>
+
+      <!-- MongoDB Badge -->
+      <g transform="translate(112, 0)">
+        <rect x="0" y="0" width="56" height="18" rx="4" fill="#1f293d" />
+        <text x="28" y="12" class="tag-text" text-anchor="middle">MongoDB</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Animated Graphic Area (Right) -->
+  <g transform="translate(295, 35)">
+    <!-- Grid lines -->
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#30363d" stroke-width="1" />
+    <line x1="0" y1="20" x2="60" y2="20" stroke="#30363d" stroke-width="1" />
+    <line x1="0" y1="40" x2="60" y2="40" stroke="#30363d" stroke-width="1" />
+    <line x1="0" y1="60" x2="60" y2="60" stroke="#30363d" stroke-width="1" stroke-dasharray="1 1" />
+    
+    <!-- Chart Bars (Vertical columns) with animations -->
+    <rect x="5" y="15" width="8" height="45" rx="1" class="chart-bar">
+      <animate attributeName="height" values="25;50;25" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="y" values="35;10;35" dur="3.5s" repeatCount="indefinite" />
+    </rect>
+    <rect x="18" y="25" width="8" height="35" rx="1" class="chart-bar">
+      <animate attributeName="height" values="45;15;45" dur="2.8s" repeatCount="indefinite" />
+      <animate attributeName="y" values="15;45;15" dur="2.8s" repeatCount="indefinite" />
+    </rect>
+    <rect x="31" y="5" width="8" height="55" rx="1" class="chart-bar">
+      <animate attributeName="height" values="30;58;30" dur="4.2s" repeatCount="indefinite" />
+      <animate attributeName="y" values="30;2;30" dur="4.2s" repeatCount="indefinite" />
+    </rect>
+    <rect x="44" y="35" width="8" height="25" rx="1" class="chart-bar">
+      <animate attributeName="height" values="15;40;15" dur="3.1s" repeatCount="indefinite" />
+      <animate attributeName="y" values="45;20;45" dur="3.1s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Line Chart Overlay -->
+    <path class="chart-line" d="M 5,45 Q 18,25 31,10 T 57,18" />
+
+    <!-- Pulse/Glow dot moving on line -->
+    <circle cx="0" cy="0" r="3" fill="#56d364">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M 5,45 Q 18,25 31,10 T 57,18" />
+    </circle>
+  </g>
+</svg>
