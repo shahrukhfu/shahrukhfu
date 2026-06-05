@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 120" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101d" />
+      <stop offset="100%" stop-color="#0b0e14" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#30363d" />
+      <stop offset="30%" stop-color="#ff7b72" />
+      <stop offset="100%" stop-color="#30363d" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .card-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      fill: #ff7b72;
+    }
+    .card-desc {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      fill: #8b949e;
+    }
+    .tag-text {
+      font-family: 'Fira Code', monospace;
+      font-weight: 500;
+      font-size: 9px;
+      fill: #c9d1d9;
+    }
+    .term-text {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 8px;
+      fill: #39ff14; /* Matrix Green */
+      opacity: 0;
+      animation: typeLine 6s step-end infinite;
+    }
+    .term-cursor {
+      fill: #39ff14;
+      animation: blink 0.8s step-end infinite;
+    }
+    @keyframes typeLine {
+      0%, 100% { opacity: 0; }
+      10%, 90% { opacity: 0.8; }
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+
+  <!-- Card Body -->
+  <rect x="1" y="1" width="378" height="118" rx="12" fill="url(#card-bg)" stroke="url(#border-glow)" stroke-width="1.5" />
+
+  <!-- Info Area (Left) -->
+  <g transform="translate(15, 15)">
+    <!-- Title -->
+    <text x="0" y="15" class="card-title">Low-Level &amp; Language Tooling</text>
+    
+    <!-- Description -->
+    <text x="0" y="38" class="card-desc">x86 Assembly games &amp; utility logic.</text>
+    <text x="0" y="53" class="card-desc">UniversalPython: a transpiler making it</text>
+    <text x="0" y="68" class="card-desc">possible to write Python in native tongues.</text>
+
+    <!-- Tech Tags -->
+    <g transform="translate(0, 88)">
+      <!-- Assembly Badge -->
+      <rect x="0" y="0" width="56" height="16" rx="4" fill="#1f293d" />
+      <text x="7" y="11" class="tag-text">Assembly</text>
+
+      <!-- Python Badge -->
+      <rect x="61" y="0" width="45" height="16" rx="4" fill="#1f293d" />
+      <text x="7" y="11" class="tag-text">Python</text>
+
+      <!-- C++ Badge -->
+      <rect x="111" y="0" width="32" height="16" rx="4" fill="#1f293d" />
+      <text x="7" y="11" class="tag-text">C++</text>
+    </g>
+  </g>
+
+  <!-- Animated Graphic Area (Right) -->
+  <g transform="translate(295, 20)">
+    <!-- Terminal Shell Frame -->
+    <rect x="0" y="0" width="70" height="80" rx="6" fill="#05070a" stroke="#30363d" stroke-width="1" />
+    <!-- Window Controls -->
+    <circle cx="8" cy="8" r="2" fill="#ff5f56" />
+    <circle cx="14" cy="8" r="2" fill="#ffbd2e" />
+    <circle cx="20" cy="8" r="2" fill="#27c93f" />
+
+    <!-- Terminal Output Text Rows -->
+    <g transform="translate(6, 22)">
+      <!-- Line 1 -->
+      <text x="0" y="5" class="term-text">
+        MOV EAX, 1
+        <animate attributeName="visibility" values="hidden;visible;hidden" keyTimes="0;0.1;0.9" dur="6s" repeatCount="indefinite" />
+      </text>
+      
+      <!-- Line 2 -->
+      <text x="0" y="17" class="term-text">
+        ADD EBX, ECX
+        <animate attributeName="visibility" values="hidden;visible;hidden" keyTimes="0;0.25;0.9" dur="6s" repeatCount="indefinite" />
+      </text>
+      
+      <!-- Line 3 -->
+      <text x="0" y="29" class="term-text">
+        INT 21H
+        <animate attributeName="visibility" values="hidden;visible;hidden" keyTimes="0;0.4;0.9" dur="6s" repeatCount="indefinite" />
+      </text>
+      
+      <!-- Line 4 (Translating) -->
+      <text x="0" y="41" class="term-text" fill="#ff7b72">
+        &gt;_ Compile ok
+        <animate attributeName="visibility" values="hidden;visible;hidden" keyTimes="0;0.65;0.9" dur="6s" repeatCount="indefinite" />
+      </text>
+
+      <!-- Blinking Cursor -->
+      <rect x="0" y="44" width="4" height="6" class="term-cursor">
+        <!-- Moving the cursor along typing sequence -->
+        <animate attributeName="x" values="0;45;0" keyTimes="0;0.65;1" dur="6s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-2;10;22;34;-2" keyTimes="0;0.1;0.25;0.4;0.65" dur="6s" repeatCount="indefinite" />
+      </rect>
+    </g>
+  </g>
+</svg>

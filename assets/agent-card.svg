@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 120" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101d" />
+      <stop offset="100%" stop-color="#0b0e14" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#30363d" />
+      <stop offset="30%" stop-color="#862ef7" />
+      <stop offset="100%" stop-color="#30363d" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .card-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      fill: #a371f7;
+    }
+    .card-desc {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      fill: #8b949e;
+    }
+    .tag-text {
+      font-family: 'Fira Code', monospace;
+      font-weight: 500;
+      font-size: 9px;
+      fill: #c9d1d9;
+    }
+    .agent-link {
+      stroke: #30363d;
+      stroke-width: 1.5;
+      fill: none;
+    }
+    .agent-link-active {
+      stroke: #862ef7;
+      stroke-width: 1.5;
+      fill: none;
+      opacity: 0.5;
+    }
+  </style>
+
+  <!-- Card Body -->
+  <rect x="1" y="1" width="378" height="118" rx="12" fill="url(#card-bg)" stroke="url(#border-glow)" stroke-width="1.5" />
+
+  <!-- Info Area (Left) -->
+  <g transform="translate(15, 15)">
+    <!-- Title -->
+    <text x="0" y="15" class="card-title">Multi-Agent &amp; AI Systems</text>
+    
+    <!-- Description -->
+    <text x="0" y="38" class="card-desc">Collaborative LLM agents using research,</text>
+    <text x="0" y="53" class="card-desc">analysis &amp; memory loops. Features</text>
+    <text x="0" y="68" class="card-desc">Knowledge Graphs &amp; semantic routing.</text>
+
+    <!-- Tech Tags -->
+    <g transform="translate(0, 88)">
+      <!-- Python Badge -->
+      <rect x="0" y="0" width="45" height="16" rx="4" fill="#1f293d" />
+      <text x="7" y="11" class="tag-text">Python</text>
+
+      <!-- LLMs Badge -->
+      <rect x="50" y="0" width="38" height="16" rx="4" fill="#1f293d" />
+      <text x="7" y="11" class="tag-text">LLMs</text>
+
+      <!-- LangChain/Agents Badge -->
+      <rect x="93" y="0" width="60" height="16" rx="4" fill="#1f293d" />
+      <text x="7" y="11" class="tag-text">LangChain</text>
+    </g>
+  </g>
+
+  <!-- Animated Graphic Area (Right) -->
+  <g transform="translate(305, 60)">
+    <!-- Node Paths (Links) -->
+    <!-- Path from Manager (0,-25) to Worker 1 (-25,20) -->
+    <path id="link-left" class="agent-link-active" d="M 0,-25 L -25,20" />
+    <!-- Path from Manager (0,-25) to Worker 2 (25,20) -->
+    <path id="link-right" class="agent-link-active" d="M 0,-25 L 25,20" />
+    <!-- Path between Worker 1 and Worker 2 -->
+    <path id="link-bottom" class="agent-link" d="M -25,20 L 25,20" />
+
+    <!-- Pulse Signals Moving Along Links -->
+    <!-- Signal from Manager to Worker 1 -->
+    <circle cx="0" cy="0" r="2.5" fill="#a371f7">
+      <animateMotion dur="2.5s" repeatCount="indefinite">
+        <mpath href="#link-left" />
+      </animateMotion>
+    </circle>
+    
+    <!-- Signal from Manager to Worker 2 -->
+    <circle cx="0" cy="0" r="2.5" fill="#a371f7">
+      <animateMotion dur="3.2s" begin="0.8s" repeatCount="indefinite">
+        <mpath href="#link-right" />
+      </animateMotion>
+    </circle>
+
+    <!-- Node Circles -->
+    <!-- Manager Node (Top) -->
+    <circle cx="0" cy="-25" r="7" fill="#862ef7">
+      <animate attributeName="r" values="7;9;7" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="-25" r="4" fill="#e6edf3" />
+
+    <!-- Worker 1 Node (Bottom Left) -->
+    <circle cx="-25" cy="20" r="6" fill="#1f6feb">
+      <animate attributeName="r" values="6;7.5;6" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="-25" cy="20" r="3" fill="#e6edf3" />
+
+    <!-- Worker 2 Node (Bottom Right) -->
+    <circle cx="25" cy="20" r="6" fill="#1f6feb">
+      <animate attributeName="r" values="6;7.5;6" dur="3s" begin="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="25" cy="20" r="3" fill="#e6edf3" />
+
+    <!-- Text Labels for Nodes (Micro-fonts) -->
+    <text x="0" y="-36" font-family="sans-serif" font-size="7" fill="#8b949e" text-anchor="middle">Coordinator</text>
+    <text x="-32" y="32" font-family="sans-serif" font-size="7" fill="#8b949e" text-anchor="middle">Research</text>
+    <text x="32" y="32" font-family="sans-serif" font-size="7" fill="#8b949e" text-anchor="middle">Analysis</text>
+  </g>
+</svg>

@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 120" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101d" />
+      <stop offset="100%" stop-color="#0b0e14" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#30363d" />
+      <stop offset="30%" stop-color="#1f6feb" />
+      <stop offset="100%" stop-color="#30363d" />
+    </linearGradient>
+
+    <!-- Scanner Gradient -->
+    <linearGradient id="scanner-line" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f6feb" stop-opacity="0" />
+      <stop offset="50%" stop-color="#1f6feb" stop-opacity="1" />
+      <stop offset="100%" stop-color="#1f6feb" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .card-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      fill: #58a6ff;
+    }
+    .card-desc {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      fill: #8b949e;
+    }
+    .tag-text {
+      font-family: 'Fira Code', monospace;
+      font-weight: 500;
+      font-size: 9px;
+      fill: #c9d1d9;
+    }
+    .brain-path {
+      stroke: #30363d;
+      stroke-width: 1.5;
+      fill: none;
+    }
+    .brain-active {
+      stroke: #1f6feb;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: draw 6s ease-in-out infinite alternate;
+    }
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+  </style>
+
+  <!-- Card Body -->
+  <rect x="1" y="1" width="378" height="118" rx="12" fill="url(#card-bg)" stroke="url(#border-glow)" stroke-width="1.5" />
+
+  <!-- Info Area (Left) -->
+  <g transform="translate(15, 15)">
+    <!-- Title -->
+    <text x="0" y="15" class="card-title">Brain MRI Deep Vision Pipeline</text>
+    
+    <!-- Description -->
+    <text x="0" y="38" class="card-desc">U-Net deep learning &amp; CV pipeline</text>
+    <text x="0" y="53" class="card-desc">for brain tumor segmentations,</text>
+    <text x="0" y="68" class="card-desc"> Graham Scan, &amp; texture metrics.</text>
+
+    <!-- Tech Tags -->
+    <g transform="translate(0, 88)">
+      <!-- Python Badge -->
+      <rect x="0" y="0" width="45" height="16" rx="4" fill="#1f293d" />
+      <text x="7" y="11" class="tag-text">Python</text>
+
+      <!-- PyTorch Badge -->
+      <rect x="50" y="0" width="50" height="16" rx="4" fill="#1f293d" />
+      <text x="7" y="11" class="tag-text">PyTorch</text>
+
+      <!-- OpenCV Badge -->
+      <rect x="105" y="0" width="48" height="16" rx="4" fill="#1f293d" />
+      <text x="9" y="11" class="tag-text">OpenCV</text>
+    </g>
+  </g>
+
+  <!-- Animated Graphic Area (Right) -->
+  <g transform="translate(300, 60)">
+    <!-- Brain Outline (Simplified Schematic) -->
+    <!-- Left side of brain -->
+    <path class="brain-path" d="M 0,-40 C -15,-40 -25,-30 -25,-15 C -25,-5 -35,-5 -35,10 C -35,25 -25,25 -20,35 C -15,45 -5,40 0,40" />
+    <path class="brain-active" d="M 0,-40 C -15,-40 -25,-30 -25,-15 C -25,-5 -35,-5 -35,10 C -35,25 -25,25 -20,35 C -15,45 -5,40 0,40" />
+    
+    <!-- Right side of brain -->
+    <path class="brain-path" d="M 0,-40 C 15,-40 25,-30 25,-15 C 25,-5 35,-5 35,10 C 35,25 25,25 20,35 C 15,45 5,40 0,40" />
+    <path class="brain-active" d="M 0,-40 C 15,-40 25,-30 25,-15 C 25,-5 35,-5 35,10 C 35,25 25,25 20,35 C 15,45 5,40 0,40" />
+
+    <line x1="0" y1="-40" x2="0" y2="40" stroke="#1f293d" stroke-dasharray="2 2" />
+
+    <!-- Pulse/Scan Line -->
+    <line x1="-40" y1="0" x2="40" y2="0" stroke="url(#scanner-line)" stroke-width="6">
+      <animate attributeName="y1" values="-35;35;-35" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="-35;35;-35" dur="3s" repeatCount="indefinite" />
+    </line>
+
+    <!-- Detected Tumor (Pulsing Red/Orange Node) -->
+    <g transform="translate(12, -8)">
+      <circle cx="0" cy="0" r="5" fill="#f85149" opacity="0.6">
+        <animate attributeName="r" values="3;7;3" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="0" cy="0" r="2.5" fill="#f85149" />
+    </g>
+  </g>
+</svg>

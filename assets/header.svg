@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 260" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="100%" stop-color="#070a13" />
+    </linearGradient>
+
+    <!-- Border Glow Gradient -->
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2e9ef7">
+        <animate attributeName="stop-color" values="#2e9ef7;#862ef7;#2e9ef7" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#862ef7">
+        <animate attributeName="stop-color" values="#862ef7;#e92ef7;#862ef7" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#2e9ef7">
+        <animate attributeName="stop-color" values="#2e9ef7;#862ef7;#2e9ef7" dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <!-- Text Gradient -->
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff" />
+      <stop offset="100%" stop-color="#bc8cff" />
+    </linearGradient>
+
+    <!-- Glowing Node Gradient -->
+    <radialGradient id="glow-node" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="1" />
+      <stop offset="30%" stop-color="#58a6ff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-node-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#bc8cff" stop-opacity="1" />
+      <stop offset="30%" stop-color="#bc8cff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1f293d" stroke-width="1" stroke-opacity="0.3" />
+    </pattern>
+
+    <!-- Clip Paths for Typewriter Effect -->
+    <clipPath id="clip-title">
+      <rect x="50" y="45" width="0" height="60">
+        <animate attributeName="width" from="0" to="500" dur="1.5s" begin="0.2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1" />
+      </rect>
+    </clipPath>
+
+    <clipPath id="clip-sub">
+      <rect x="50" y="115" width="0" height="40">
+        <animate attributeName="width" from="0" to="600" dur="2s" begin="1.7s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1" />
+      </rect>
+    </clipPath>
+  </defs>
+
+  <style>
+    .title-text {
+      font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      fill: url(#text-grad);
+      letter-spacing: 1px;
+    }
+    .sub-text {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-weight: 600;
+      font-size: 20px;
+      fill: #e6edf3;
+    }
+    .desc-text {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      fill: #8b949e;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+      animation-delay: 3.5s;
+    }
+    .node-line {
+      stroke: #1f293d;
+      stroke-width: 1.5;
+      stroke-dasharray: 4 4;
+      animation: dash 30s linear infinite;
+    }
+    .node-line-active {
+      stroke: url(#text-grad);
+      stroke-width: 1.5;
+      opacity: 0.4;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -1000; }
+    }
+  </style>
+
+  <!-- Background Card -->
+  <rect x="2" y="2" width="846" height="256" rx="16" fill="url(#bg-grad)" />
+  <rect x="2" y="2" width="846" height="256" rx="16" fill="url(#grid)" />
+
+  <!-- Animated Border -->
+  <rect x="2" y="2" width="846" height="256" rx="16" fill="none" stroke="url(#border-grad)" stroke-width="2.5" opacity="0.8" />
+
+  <!-- Left Side: Interactive Typing Text Info -->
+  <g transform="translate(10, 10)">
+    <!-- Main Name -->
+    <text x="50" y="85" class="title-text" clip-path="url(#clip-title)">Shahrukh Faisal</text>
+    
+    <!-- Subtitle (Typewriter) -->
+    <text x="50" y="135" class="sub-text" clip-path="url(#clip-sub)">AI Engineer &amp; Data Scientist</text>
+    
+    <!-- Cursor for Subtitle -->
+    <rect x="50" y="116" width="3" height="24" fill="#58a6ff">
+      <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
+      <animate attributeName="x" from="50" to="405" dur="2s" begin="1.7s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1" />
+      <animate attributeName="visibility" to="hidden" begin="3.8s" fill="freeze" />
+    </rect>
+
+    <!-- Description (Fade in) -->
+    <text x="50" y="178" class="desc-text">Building next-gen AI Agents, Deep Vision models &amp; Full-Stack systems.</text>
+    <text x="50" y="200" class="desc-text">Exploring low-level optimizations &amp; explainable machine learning.</text>
+  </g>
+
+  <!-- Right Side: Animated Intelligent Network Graph (AI/Agentic Graphic) -->
+  <g transform="translate(640, 130)">
+    <!-- Connection Lines -->
+    <line x1="0" y1="0" x2="-80" y2="-50" class="node-line-active" />
+    <line x1="0" y1="0" x2="-60" y2="60" class="node-line-active" />
+    <line x1="0" y1="0" x2="80" y2="-40" class="node-line" />
+    <line x1="0" y1="0" x2="70" y2="50" class="node-line" />
+    
+    <line x1="-80" y1="-50" x2="-60" y2="60" class="node-line" />
+    <line x1="-80" y1="-50" x2="-120" y2="0" class="node-line-active" />
+    <line x1="-60" y1="60" x2="-120" y2="0" class="node-line" />
+    
+    <!-- Pulse Ring Animations for Nodes -->
+    <!-- Central Node Pulse -->
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#58a6ff" stroke-width="1">
+      <animate attributeName="r" values="8;35;8" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Outer Node Pulses -->
+    <circle cx="-80" cy="-50" r="6" fill="none" stroke="#bc8cff" stroke-width="1">
+      <animate attributeName="r" values="5;20;5" dur="4s" begin="1s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="4s" begin="1s" repeatCount="indefinite" />
+    </circle>
+
+    <circle cx="-60" cy="60" r="6" fill="none" stroke="#bc8cff" stroke-width="1">
+      <animate attributeName="r" values="5;20;5" dur="3.5s" begin="0.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="3.5s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Node Glow Orbs -->
+    <circle cx="0" cy="0" r="30" fill="url(#glow-node)" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="-80" cy="-50" r="20" fill="url(#glow-node-purple)" opacity="0.4">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="-60" cy="60" r="20" fill="url(#glow-node-purple)" opacity="0.4">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Solid Nodes -->
+    <circle cx="0" cy="0" r="6" fill="#58a6ff" />
+    <circle cx="-80" cy="-50" r="5" fill="#bc8cff" />
+    <circle cx="-60" cy="60" r="5" fill="#bc8cff" />
+    <circle cx="80" cy="-40" r="4" fill="#30363d" />
+    <circle cx="70" cy="50" r="4" fill="#30363d" />
+    <circle cx="-120" cy="0" r="4" fill="#bc8cff" />
+    
+    <!-- Floating Orbiting Particles -->
+    <circle cx="0" cy="0" r="2" fill="#58a6ff">
+      <animateMotion dur="6s" repeatCount="indefinite" path="M 0,-40 A 40,40 0 1,1 -0.01,-40" />
+    </circle>
+    <circle cx="0" cy="0" r="1.5" fill="#bc8cff">
+      <animateMotion dur="9s" repeatCount="indefinite" path="M 0,70 A 70,70 0 1,0 0.01,70" />
+    </circle>
+  </g>
+</svg>
