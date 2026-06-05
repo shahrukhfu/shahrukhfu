@@ -2,7 +2,7 @@
 
 # Shahrukh Faisal
 
-<img src="https://readme-typing-svg.demolab.com/?lines=AI+Developer;Data+Science+Engineer;Full+Stack+Developer;Python+Developer;JavaScript+Developer;Building+Intelligent+Systems;Exploring+Data+Driven+Solutions&font=Fira%20Code&center=true&width=850&height=45&color=2E9EF7&vCenter=true&pause=1000&size=22" />
+<img src="https://readme-typing-svg.demolab.com/?lines=AI+Engineer;Data+Science+Explorer;Full+Stack+Developer;Python+Developer;JavaScript+Developer;Building+Intelligent+Systems;Exploring+Data+Driven+Solutions&font=Fira%20Code&center=true&width=850&height=45&color=2E9EF7&vCenter=true&pause=1000&size=22" />
 
 </div>
 
