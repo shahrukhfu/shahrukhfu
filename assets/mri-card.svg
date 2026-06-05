@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 120" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 140" width="100%" height="100%">
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -59,7 +59,7 @@
   </style>
 
   <!-- Card Body -->
-  <rect x="1" y="1" width="378" height="118" rx="12" fill="url(#card-bg)" stroke="url(#border-glow)" stroke-width="1.5" />
+  <rect x="1" y="1" width="378" height="138" rx="12" fill="url(#card-bg)" stroke="url(#border-glow)" stroke-width="1.5" />
 
   <!-- Info Area (Left) -->
   <g transform="translate(15, 15)">
@@ -69,26 +69,32 @@
     <!-- Description -->
     <text x="0" y="38" class="card-desc">U-Net deep learning &amp; CV pipeline</text>
     <text x="0" y="53" class="card-desc">for brain tumor segmentations,</text>
-    <text x="0" y="68" class="card-desc"> Graham Scan, &amp; texture metrics.</text>
+    <text x="0" y="68" class="card-desc">Graham Scan, &amp; texture metrics.</text>
 
     <!-- Tech Tags -->
     <g transform="translate(0, 88)">
       <!-- Python Badge -->
-      <rect x="0" y="0" width="45" height="16" rx="4" fill="#1f293d" />
-      <text x="7" y="11" class="tag-text">Python</text>
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="48" height="18" rx="4" fill="#1f293d" />
+        <text x="24" y="12" class="tag-text" text-anchor="middle">Python</text>
+      </g>
 
       <!-- PyTorch Badge -->
-      <rect x="50" y="0" width="50" height="16" rx="4" fill="#1f293d" />
-      <text x="7" y="11" class="tag-text">PyTorch</text>
+      <g transform="translate(54, 0)">
+        <rect x="0" y="0" width="56" height="18" rx="4" fill="#1f293d" />
+        <text x="28" y="12" class="tag-text" text-anchor="middle">PyTorch</text>
+      </g>
 
       <!-- OpenCV Badge -->
-      <rect x="105" y="0" width="48" height="16" rx="4" fill="#1f293d" />
-      <text x="9" y="11" class="tag-text">OpenCV</text>
+      <g transform="translate(116, 0)">
+        <rect x="0" y="0" width="52" height="18" rx="4" fill="#1f293d" />
+        <text x="26" y="12" class="tag-text" text-anchor="middle">OpenCV</text>
+      </g>
     </g>
   </g>
 
   <!-- Animated Graphic Area (Right) -->
-  <g transform="translate(300, 60)">
+  <g transform="translate(300, 70)">
     <!-- Brain Outline (Simplified Schematic) -->
     <!-- Left side of brain -->
     <path class="brain-path" d="M 0,-40 C -15,-40 -25,-30 -25,-15 C -25,-5 -35,-5 -35,10 C -35,25 -25,25 -20,35 C -15,45 -5,40 0,40" />
